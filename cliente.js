@@ -2,17 +2,31 @@ const informacoesClientes = [
     {
         cpf: "66809433023",
         nome: "Jairo"
+    },
+    {
+        cpf: "66809433023",
+        nome: "Pedro"
+    },
+    {
+        cpf: "66809433023",
+        nome: "Sabrina"
     }
 ]
-
-const conteudo =
- `<tr>
-    <td>${informacoesClientes[0].cpf}</td>
-    <td>${informacoesClientes[0].nome}</td>
-  </tr>`;
-
-console.log(conteudo)
-
 const corpoTabela = document.querySelector("[data-conteudo-tabela]")
 
-corpoTabela.innerHTML = conteudo;
+
+const renderizarCliente = (cpf, nome) => {
+    const linha = document.createElement('tr')
+    const conteudo =
+`
+    <td>${cpf}</td>
+    <td>${nome}</td>
+`
+    linha.innerHTML = conteudo
+
+    return linha;
+}
+
+informacoesClientes.forEach( indice => {
+    corpoTabela.appendChild(renderizarCliente(indice.cpf, indice.nome))
+})
