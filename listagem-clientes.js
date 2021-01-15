@@ -11,6 +11,8 @@ const renderizarCliente = (cpf, nome) => {
   return linha;
 };
 
-informacoesClientes.forEach((indice) => {
-  corpoTabela.appendChild(renderizarCliente(indice.cpf, indice.nome));
+listarClientes().then((exibe) => {
+  exibe.forEach((indice) => {
+    corpoTabela.appendChild(renderizarCliente(indice.cpf, indice.nome));
+  });
 });
