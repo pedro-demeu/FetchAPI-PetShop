@@ -16,7 +16,7 @@ const cadastrarClientes = (nome, cpf) => {
   return fetch('http://localhost:4000/clientes/cliente', {
     method: 'POST',
     headers: {
-      'Content-type': 'application/json',
+      'Content-Type': 'application/json',
     },
     body: json,
   }).then((resp) => {
