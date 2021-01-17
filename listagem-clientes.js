@@ -2,6 +2,7 @@ const corpoTabela = document.querySelector('[data-conteudo-tabela]');
 const removerCliente = (id) => {
   if (confirm('Deseja mesmo deletar esse cliente?')) {
     deletarCliente(id);
+    document.location.reload();
   } else {
   }
 };
