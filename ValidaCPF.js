@@ -25,9 +25,10 @@ function somarNumerosDoCPF(cpf, totalDeDigitos, peso) {
 }
 
 function VerificarDigito(cpf, totalDeDigitos, peso, digitoDeVerificacao) {
-  const soma = somarNumerosDoCPF(cpf, totalDeDigitos, peso);
-  const resto = (soma * 10) % 11;
-
+  let soma = somarNumerosDoCPF(cpf, totalDeDigitos, peso);
+  let resto = (soma * 10) % 11;
+  if (resto === 10 || resto === 11)
+    resto = 0; /*adicionei esta linha para completar a lógica.*/
   return resto === digitoDeVerificacao;
 }
 
