@@ -29,3 +29,11 @@ const deletarCliente = (id) => {
     method: 'DELETE',
   });
 };
+
+const detalharCliente = (id) => {
+  return fetch(`http://localhost:4000/clientes/cliente/${id}`).then(
+    (resposta) => {
+      return resposta.json();
+    },
+  );
+};
